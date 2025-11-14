@@ -1,33 +1,44 @@
 import * as readlineSync from "readline-sync";
+import { colors } from "./src/util/Colors"; 
+import { Produto } from "./src/model/Produto";
 
-export function main(): void {
+
+export function main(): {
+   
     let opcao: number;
 
+    
+    
+
     while (true) {
-        console.clear();
-        console.log("=====================================================");
+        
+        console.log(colors.fg.yellow, 
+                    "=====================================================");
         console.log("                                                     ");
-        console.log("                    TUDO DEZ                         ");
+        console.log("                    Chaveiros DEZ                    ");
         console.log("                                                     ");
         console.log("=====================================================");
         console.log("                                                     ");
         console.log("            1 - Criar Pedido                         ");
-        console.log("            2 - Incluir + Intens                     ");
+        console.log("            2 - Listar Produtos                      ");
         console.log("            3 - Buscar Pedido                        ");
         console.log("            4 - Cancelar Pedido                      ");
         console.log("            5 - Listar Pedido                        ");
         console.log("            6 - Comprar                              ");
         console.log("            7 - Pagar                                ");
-        console.log("            0 - Sair                                 ");
+        console.log("            8 - Finalizar                            ");
+        console.log("            9 - Sair                                 ");
         console.log("                                                     ");
         console.log("=====================================================");
-        console.log("                                                     ");
+        console.log("                                                     ",
+        colors.reset)
 
         opcao = readlineSync.questionInt("Entre com a opção desejada: ");
 
-        if (opcao === 0) {
-            console.log("\nTUDO DEZ - PREÇO UNICO");
+        if (opcao === 9) {
+            console.log(colors.fg.yellow, "\n Chaveiros - PREÇO UNICO");
             sobre();
+            console.log(colors.reset,"")
             process.exit(0);
         }
 
@@ -35,39 +46,39 @@ export function main(): void {
 
         switch (opcao) {
             case 1:
-                console.log("\n\nCriar Pedido\n\n");
+                console.log(colors.fg.yellow,"\n\nCriar Pedido\n\n",colors.reset);
 
                 break;
             case 2:
-                console.log("\n\nIncluir + Intens ao Pedido\n\n");
+                console.log(colors.fg.yellow,"\n\nListar Produtos\n\n",colors.reset);
 
                 break;
             case 3:
-                console.log("\n\nBuscar Pedido \n\n");
+                console.log(colors.fg.yellow,"\n\nBuscar Pedido \n\n",colors.reset);
 
                 break;
             case 4:
-                console.log("\n\nCancelar Pedido\n\n");
+                console.log(colors.fg.yellow,"\n\nCancelar Pedido\n\n",colors.reset);
 
                 break;
             case 5:
-                console.log("\n\nListar Pedido \n\n");
+                console.log(colors.fg.yellow,"\n\nListar Pedido \n\n",colors.reset);
 
                 break;
             case 6:
-                console.log("\n\nComprar\n\n");
+                console.log(colors.fg.yellow,"\n\nComprar\n\n",colors.reset);
 
                 break;
             case 7:
-                console.log("\n\nPagar\n\n");
+                console.log(colors.fg.yellow,"\n\nPagar\n\n",colors.reset);
 
                 break;
             case 8:
-                console.log("\n\nOpção Inválida!\n\n");
+                console.log(colors.fg.yellow,"\n\n Compra Finalizada\n\n",colors.reset);
 
                 break;
             default:
-                console.log("\nOpção Inválida!\n");
+                console.log(colors.fg.yellow,"\nOpção Inválida!\n",colors.reset);
 
         readlineSync.question("\nPressione Enter para voltar ao menu...");
     }
