@@ -1,6 +1,5 @@
 import * as readlineSync from "readline-sync";
 import { colors } from "./src/util/Colors"; 
-import { Produto } from "./src/model/Produto";
 
 
 export function main(): {
