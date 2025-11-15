@@ -1,15 +1,13 @@
 import * as readlineSync from "readline-sync";
 import { colors } from "./src/util/Colors"; 
+import
 
 
-export function main(): {
+export function main():void {
    
     let opcao: number;
 
-    
-    
-
-    while (true) {
+       while (true) {
         
         console.log(colors.fg.yellow, 
                     "=====================================================");
@@ -18,15 +16,12 @@ export function main(): {
         console.log("                                                     ");
         console.log("=====================================================");
         console.log("                                                     ");
-        console.log("            1 - Criar Pedido                         ");
-        console.log("            2 - Listar Produtos                      ");
-        console.log("            3 - Buscar Pedido                        ");
-        console.log("            4 - Cancelar Pedido                      ");
-        console.log("            5 - Listar Pedido                        ");
-        console.log("            6 - Comprar                              ");
-        console.log("            7 - Pagar                                ");
-        console.log("            8 - Finalizar                            ");
-        console.log("            9 - Sair                                 ");
+        console.log("            1 - Cadastrar Produto                    ");
+        console.log("            2 - Buscar Produto                       ");
+        console.log("            3 - Cancelar Produto                     ");
+        console.log("            4 - Listar Produtos                      ");
+        console.log("            6 - Atualizar                            ");
+        console.log("            0 - Sair                                 ");
         console.log("                                                     ");
         console.log("=====================================================");
         console.log("                                                     ",
@@ -34,7 +29,7 @@ export function main(): {
 
         opcao = readlineSync.questionInt("Entre com a opção desejada: ");
 
-        if (opcao === 9) {
+        if (opcao === 0) {
             console.log(colors.fg.yellow, "\n Chaveiros - PREÇO UNICO");
             sobre();
             console.log(colors.reset,"")
@@ -46,6 +41,13 @@ export function main(): {
         switch (opcao) {
             case 1:
                 console.log(colors.fg.yellow,"\n\nCriar Pedido\n\n",colors.reset);
+
+  console.log("Digite o id. do Chaveiro: ");
+                = readlineSync.question("");            
+                console.log("Digite o preço do Chaveiro (R$): ");
+                 = readlineSync.questionFloat("");
+
+                            
 
                 break;
             case 2:
@@ -92,4 +94,9 @@ export function sobre(): void {
     console.log("=============================================");
 }
 
+function keyPress(): void {
+    console.log(colors.reset, "");
+    console.log("\nPressione enter para continuar...");
+    readlineSync.prompt();
+}
 main();
