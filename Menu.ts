@@ -1,36 +1,42 @@
-import * as readlineSync from "readline-sync";
-import { colors } from "./src/util/Colors"; 
-import
+import readlineSync = require("readline-sync");
+import { colors } from "./src/util/Colors";
+import { ChaveiroSimples } from './src/model/ChaveiroSimples';
+import { ChaveiroPersonalidado } from './src/model/ChaveiroPersonalizado';
+import { ProdutoController} from '.src/controller/ProdutoController'
+
+export function main() {
+    let produtos: ProdutoController = new ProdutoController();
+
+    let opcao, id, categoria, tipo, preco: number;
+    let nome, tamanho, cor: string;
+    const tiposProdutos = ['Chaveiro Simples', 'Chaveiro Personalidado'];
 
 
-export function main():void {
-   
-    let opcao: number;
-
-       while (true) {
+    
+        while (true) {
         
         console.log(colors.fg.yellow, 
                     "=====================================================");
         console.log("                                                     ");
-        console.log("                    Chaveiros DEZ                    ");
+        console.log("                    CHAVEIROS JOSY                   ");
         console.log("                                                     ");
         console.log("=====================================================");
         console.log("                                                     ");
         console.log("            1 - Cadastrar Produto                    ");
-        console.log("            2 - Buscar Produto                       ");
-        console.log("            3 - Cancelar Produto                     ");
-        console.log("            4 - Listar Produtos                      ");
-        console.log("            6 - Atualizar                            ");
-        console.log("            0 - Sair                                 ");
+        console.log("            2 - Listar Produtos                      ");
+        console.log("            3 - Atualizar Produto                    ");
+        console.log("            4 - Deletar Produt                       ");
+        console.log("                0 - Sair                             ");
         console.log("                                                     ");
         console.log("=====================================================");
         console.log("                                                     ",
         colors.reset)
 
+
         opcao = readlineSync.questionInt("Entre com a opção desejada: ");
 
         if (opcao === 0) {
-            console.log(colors.fg.yellow, "\n Chaveiros - PREÇO UNICO");
+            console.log(colors.fg.yellow, "\n  Obrigado por usar o sistema da Josy Store!\n");
             sobre();
             console.log(colors.reset,"")
             process.exit(0);
@@ -40,23 +46,24 @@ export function main():void {
 
         switch (opcao) {
             case 1:
-                console.log(colors.fg.yellow,"\n\nCriar Pedido\n\n",colors.reset);
+                console.log(colors.fg.yellow,"\n\nCriar Pedido\n\n",colors.reset);                
 
-  console.log("Digite o id. do Chaveiro: ");
-                = readlineSync.question("");            
-                console.log("Digite o preço do Chaveiro (R$): ");
-                 = readlineSync.questionFloat("");
+                console.log("\n\nCadastrar Chaveiro\n\n");
 
-                            
+               
 
                 break;
             case 2:
                 console.log(colors.fg.yellow,"\n\nListar Produtos\n\n",colors.reset);
 
+
+
                 break;
             case 3:
                 console.log(colors.fg.yellow,"\n\nBuscar Pedido \n\n",colors.reset);
 
+
+                
                 break;
             case 4:
                 console.log(colors.fg.yellow,"\n\nCancelar Pedido\n\n",colors.reset);
@@ -92,11 +99,5 @@ export function sobre(): void {
     console.log("Generation Brasil - generation@generation.org");
     console.log("       github.com/conteudoGeneration         ");
     console.log("=============================================");
-}
-
-function keyPress(): void {
-    console.log(colors.reset, "");
-    console.log("\nPressione enter para continuar...");
-    readlineSync.prompt();
 }
 main();
