@@ -1,5 +1,5 @@
 import { Produto } from "../model/Produto";
-import { ProdutoRepository } from "../repository/ProductRepository";
+import{ProdutoRepository} from "../repository/ProdutoRepository"
 
 export class ProdutoController implements ProdutoRepository {
     private listaProdutos: Array<Produto> = [];
