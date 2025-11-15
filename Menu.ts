@@ -136,12 +136,12 @@ export function main() {
 
 /* Função com os dados da pessoa desenvolvedora */
 export function sobre(): void {
-    console.log("\n==================================================");
-    console.log("Projeto Desenvolvido por: Joselaine Bechaire        ");
-    console.log("Generation Brasil - generation@generation.org");
-    console.log("       github.com/conteudoGeneration                ");
+    console.log("\n===================================================");
+    console.log("   Projeto Desenvolvido por: Joselaine Bechaire      ");
+    console.log("   Generation Brasil - generation@generation.or      ");
+    console.log("          github.com/conteudoGeneration              ");
     console.log("https://github.com/JBechaire/projeto_final_bloco_01\n");
-    console.log("=====================================================");
+    console.log("\n===================================================");
 }
 function keyPress() {
     readlineSync.question("\nPressione Enter para continuar...");
